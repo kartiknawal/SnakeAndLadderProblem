@@ -7,6 +7,9 @@ namespace SnakeAndLadderProblem
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the Snake and Ladder Simulator");
+            int score;
+            score = 0;
+            return;
         }
     }
 }
