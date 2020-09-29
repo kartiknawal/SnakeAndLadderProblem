@@ -11,10 +11,45 @@ namespace SnakeAndLadderProblem
             score = 0;
             Console.WriteLine("Initial score : " + score);
 
-            score = DiceRoll();
-            Console.WriteLine("DiceRoll " + score);
+            int diceRoll;
+            diceRoll = DiceRoll();
+            Console.WriteLine("DiceRoll " + diceRoll);
 
+            string option;
+            option = CheckOptions();
+            Console.WriteLine("The player got the option " + option);
+
+            switch (option)
+            {
+                case "NO_PLAY":
+                    break;
+                case "LADDER":
+                    score += diceRoll;
+                    break;
+                case "SNAKE":
+                    score -= diceRoll;
+                    break;
+                default:
+                    break;
+            }
+
+            if (score < 0)
+                score = 0;
+
+            if (score > 100)
+                score = 100;
+
+            Console.WriteLine("The score after the dice roll is " + score);
             return;
+        }
+        static string CheckOptions()
+        {
+            string[] options = new string[3] { "NO_PLAY", "LADDER", "SNAKE" };
+            int index;
+
+            Random random = new Random();
+            index = random.Next(0, 3);
+            return options[index];
         }
         static int DiceRoll()
         {
