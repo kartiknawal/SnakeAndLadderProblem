@@ -11,7 +11,7 @@ namespace SnakeAndLadderProblem
             score = 0;
             Console.WriteLine("Initial score : " + score);
 
-            while (score < 100)
+            while (score != 100)
             {
                 if (score < 0)
                     score = 0;
@@ -30,6 +30,8 @@ namespace SnakeAndLadderProblem
                         break;
                     case "LADDER":
                         score += diceRoll;
+                        if (score > 100)
+                            score -= diceRoll;
                         break;
                     case "SNAKE":
                         score -= diceRoll;
