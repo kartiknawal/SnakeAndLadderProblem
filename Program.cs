@@ -33,12 +33,6 @@ namespace SnakeAndLadderProblem
                     break;
             }
 
-            if (score < 0)
-                score = 0;
-
-            if (score > 100)
-                score = 100;
-
             Console.WriteLine("The score after the dice roll is " + score);
             return;
         }
